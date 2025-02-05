@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cases à cocher interactives</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Interactivité avec des cases à cocher</h1>
+
+
+    <!-- Contrôle pour afficher/masquer la première boîte -->
+    <label>
+        <input type="checkbox" id="toggle-div1">
+        Afficher/Masquer la première boîte
+    </label>
+    <div class="content-box" id="box1">
+        <p>Voici le contenu de la première boîte. Elle contient un exemple de texte.</p>
+        <ul>
+            <li>Élément 1</li>
+            <li>Élément 2</li>
+        </ul>
+
+        <!-- Options pour changer le style de la boîte 1 -->
+        <label>
+            <input type="checkbox" id="change-background-box1">
+            Changer la couleur de fond (vert clair)
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" id="change-text-box1">
+            Changer la couleur du texte (bleu)
+        </label>
+    </div>
+
+    <!-- Contrôle pour afficher/masquer la deuxième boîte -->
+    <label>
+        <input type="checkbox" id="toggle-div2">
+        Afficher/Masquer la deuxième boîte
+    </label>
+    <div class="content-box" id="box2">
+        <p>Ceci est une deuxième boîte avec un autre contenu.</p>
+        <blockquote>"Une citation inspirante ici."</blockquote>
+
+        <!-- Options pour changer le style de la boîte 2 -->
+        <label>
+            <input type="checkbox" id="change-background-box2">
+            Changer la couleur de fond (corail clair)
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" id="change-text-box2">
+            Changer la couleur du texte (violet)
+        </label>
+    </div>
+</body>
+
+<script language="JavaScript"> 
+    const checkbox1 = document.getElementById("toggle-div1");
+    const divText1 = document.getElementById("box1"); // à compléter, ce code ne fonctionne pas
+
+    // Attache une fonction à l'évènement "click" sur checkboxParoles
+    checkbox1.addEventListener('click', function (event) {
+    // cette fonction est executée lorsque l'utilisateur clique sur checkboxParoles
+    // event.target contient l'élément cliqué (ici checkboxParoles dans notre cas)
+    if (event.target.checked) { 
+        divText1.style.display = "none";
+        // la case vient d'être cochée
+    } else {
+        divText1.style.display = "block";
+        // la case vient d'être décochée
+    }
+    });
+</script>
+</html>
